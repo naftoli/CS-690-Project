@@ -41,24 +41,24 @@ Create a console based Recipe Saver Application to manage all Recipes in one con
 ## Use Cases
 
 - UC1: Login
-  - FR1: create credentials (username / password) if first time user
-  - FR2: save to file
-  - FR3: enter username / password to login
-  - FR4: program authenticates username / password against file
-  - FR5: on success, show main menu
-  - FR6: on failure show error message with ability to retry
-  - NFR1: Login process should be simple and intuitive
-  - NFR2: App should be always available with or without internet connectivity
+  - FR1: [create credentials (username / password) if first time user](https://github.com/naftoli/CS-690-Project/issues/1)
+  - FR2: [save to file](https://github.com/naftoli/CS-690-Project/issues/2)
+  - FR3: [enter username / password to login](https://github.com/naftoli/CS-690-Project/issues/3)
+  - FR4: [program authenticates username / password against file](https://github.com/naftoli/CS-690-Project/issues/4)
+  - FR5: [on success, show main menu](https://github.com/naftoli/CS-690-Project/issues/5)
+  - FR6: [on failure show error message with ability to retry](https://github.com/naftoli/CS-690-Project/issues/6)
+  - NFR1: [Login process should be simple and intuitive](https://github.com/naftoli/CS-690-Project/issues/7)
+  - NFR2: [App should be always available with or without internet connectivity](https://github.com/naftoli/CS-690-Project/issues/8)
 
 - UC2: Find Recipe
-  - FR1: enable user to search for recipe by term or name
-  - FR2: find recipe based on search
-  - NFR1: recipe should be found quickly regardless of how many recipes there are
-  - NFR2: feature should be simple and intuitive
+  - FR1: [enable user to search for recipe by term or name](https://github.com/naftoli/CS-690-Project/issues/9)
+  - FR2: [find recipe based on search](https://github.com/naftoli/CS-690-Project/issues/10)
+  - NFR1: [recipe should be found quickly regardless of how many recipes there are](https://github.com/naftoli/CS-690-Project/issues/11)
+  - NFR2: [feature should be simple and intuitive](https://github.com/naftoli/CS-690-Project/issues/12)
 
 - UC2: Manage Recipes
-  - FR1: Add Recipe by entering name, list of ingredients, and instructions
-  - FR2: Delete Recipe by using Find Recipe feature
-  - FR3: Edit Recipe by using Find Recipe feature and then choosing to edit the name or ingredients or instructions
-  - FR4: All changes need to be saved
-  - NFR1: process should be smooth and intuitive
+  - FR1: [Add Recipe by entering name, list of ingredients, and instructions](https://github.com/naftoli/CS-690-Project/issues/13)
+  - FR2: [Delete Recipe by using Find Recipe feature](https://github.com/naftoli/CS-690-Project/issues/14)
+  - FR3: [Edit Recipe by using Find Recipe feature and then choosing to edit the name or ingredients or instructions](https://github.com/naftoli/CS-690-Project/issues/15)
+  - FR4: [All changes need to be saved](https://github.com/naftoli/CS-690-Project/issues/16)
+  - NFR1: [process should be smooth and intuitive](https://github.com/naftoli/CS-690-Project/issues/17)
