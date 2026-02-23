@@ -78,4 +78,4 @@ Create a console based Recipe / Ingredients Manager to manage all Recipes and In
 
 ## Constraints
 - The UI will be console-based.
-- Project must use dotnet latest version (currently version 10)
+- Project must use latest dotnet version (currently version 10)
