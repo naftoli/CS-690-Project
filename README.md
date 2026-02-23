@@ -18,9 +18,9 @@ At work, Sarah chats with her coworker, Amanda, who mentions a great lasagna rec
 
 ### Lunch
 
-Over lunch, Sarah thinks about how many recipesshe’ssaved in random places—screenshots, bookmarked websites, scraps of paper. “I need to organize these somehow,” she mutters to herself.
+Over lunch, Sarah thinks about how many recipes she’s saved in random places—screenshots, bookmarked websites, scraps of paper. “I need to organize these somehow,” she mutters to herself.
 
-She writes “Organize recipes” on a sticky note, but itends upburied under a pile of other notes by the end of the day.
+She writes “Organize recipes” on a sticky note, but it ends up buried under a pile of other notes by the end of the day.
 
 ### Afternoon
 
