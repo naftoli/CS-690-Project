@@ -10,7 +10,7 @@ A Day in the Life of Sarah
 
 Sarah sits at the kitchen table, sipping her coffee and staring at the ingredients in her fridge.There’s a chicken breast, some spinach, and a half-empty jar of pesto. “What can I make with this?” she wonders.
 
-She remembers seeing a recipe online last week that used similar ingredients, but shedidn’tsave it. Flipping through herphone’sbrowser history feels like a chore, so she gives up and decides to make a sandwich instead.
+She remembers seeing a recipe online last week that used similar ingredients, but she didn’t save it. Flipping through her phone’s browser history feels like a chore, so she gives up and decides to make a sandwich instead.
 
 ### Late Morning
 
