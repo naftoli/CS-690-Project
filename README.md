@@ -32,11 +32,11 @@ Back home, she realizes she already had pasta and tomatoes in the pantry. “Why
 
 Sarah tries to find a recipe for dinner but quickly gets frustrated by the clutter on her phone and in her kitchen. There are loose papers with half-written recipes, random screenshots, and a few cookbooks she barely uses.
 
-She ends up making spaghetti—again—and promises herself she’llfigure out a better system for her recipes. But the day ends with the same disorganized stack of notes.
+She ends up making spaghetti—again—and promises herself she’ll figure out a better system for her recipes. But the day ends with the same disorganized stack of notes.
 
 ## Business Requirement
 
-Create a console based Recipe Saver Application to manage all Recipes in one convenient location.
+Create a console based Recipe / Ingredients Manager to manage all Recipes and Ingredients Inventory in one place.
 
 ## Use Cases
 
@@ -50,15 +50,32 @@ Create a console based Recipe Saver Application to manage all Recipes in one con
   - NFR1: [Login process should be simple and intuitive](https://github.com/naftoli/CS-690-Project/issues/7)
   - NFR2: [App should be always available with or without internet connectivity](https://github.com/naftoli/CS-690-Project/issues/8)
 
-- UC2: Find Recipe
-  - FR1: [enable user to search for recipe by term or name](https://github.com/naftoli/CS-690-Project/issues/9)
-  - FR2: [find recipe based on search](https://github.com/naftoli/CS-690-Project/issues/10)
-  - NFR1: [recipe should be found quickly regardless of how many recipes there are](https://github.com/naftoli/CS-690-Project/issues/11)
-  - NFR2: [feature should be simple and intuitive](https://github.com/naftoli/CS-690-Project/issues/12)
+- UC2: Ingredients Inventory / Management
+  - FR1: [List current Inventory]
+  - FR2: [Add Item (Name and Qty)]
+  - FR3: [Edit Item (choose from list and then edit)]
+  - FR3: [Delete Item (choose from list)]
+  - NFR1: [UI should be simple and intuitive]
 
-- UC2: Manage Recipes
+- UC3: Recipe Management
   - FR1: [Add Recipe by entering name, list of ingredients, and instructions](https://github.com/naftoli/CS-690-Project/issues/13)
   - FR2: [Delete Recipe by using Find Recipe feature](https://github.com/naftoli/CS-690-Project/issues/14)
   - FR3: [Edit Recipe by using Find Recipe feature and then choosing to edit the name or ingredients or instructions](https://github.com/naftoli/CS-690-Project/issues/15)
   - FR4: [All changes need to be saved](https://github.com/naftoli/CS-690-Project/issues/16)
   - NFR1: [process should be smooth and intuitive](https://github.com/naftoli/CS-690-Project/issues/17)
+
+- UC4: Recipe Finder
+  - FR1: [enable user to search for recipe by term or name](https://github.com/naftoli/CS-690-Project/issues/9)
+  - FR2: [find recipe based on search](https://github.com/naftoli/CS-690-Project/issues/10)
+  - NFR1: [recipe should be found quickly regardless of how many recipes there are](https://github.com/naftoli/CS-690-Project/issues/11)
+  - NFR2: [feature should be simple and intuitive](https://github.com/naftoli/CS-690-Project/issues/12)
+
+- UC5: Store List
+  - FR1: [Find Recipe to use]
+  - FR2: [Generate list of missing ingredients / items if needed]
+  - FR3: [Print list]
+  - NRF1: [simple and intuitive menu]
+
+## Constraints
+- The UI will be console-based.
+- Project must use dotnet latest version (currently version 10)
