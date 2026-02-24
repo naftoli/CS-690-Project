@@ -51,11 +51,11 @@ Create a console based Recipe / Ingredients Manager to manage all Recipes and In
   - NFR2: [App should be always available with or without internet connectivity](https://github.com/naftoli/CS-690-Project/issues/8)
 
 - UC2: Ingredients Inventory / Management
-  - FR1: [List current Inventory]
-  - FR2: [Add Item (Name and Qty)]
-  - FR3: [Edit Item (choose from list and then edit)]
-  - FR3: [Delete Item (choose from list)]
-  - NFR1: [UI should be simple and intuitive]
+  - FR1: [Add Item (Name and Qty)](https://github.com/naftoli/CS-690-Project/issues/18)
+  - FR2: [List current Inventory](https://github.com/naftoli/CS-690-Project/issues/21)
+  - FR3: [Edit Item (choose from list and then edit)](https://github.com/naftoli/CS-690-Project/issues/19)
+  - FR4: [Delete Item (choose from list)](https://github.com/naftoli/CS-690-Project/issues/20)
+  - NFR1: [UI should be simple and intuitive](https://github.com/naftoli/CS-690-Project/issues/22)
 
 - UC3: Recipe Management
   - FR1: [Add Recipe by entering name, list of ingredients, and instructions](https://github.com/naftoli/CS-690-Project/issues/13)
@@ -70,11 +70,14 @@ Create a console based Recipe / Ingredients Manager to manage all Recipes and In
   - NFR1: [recipe should be found quickly regardless of how many recipes there are](https://github.com/naftoli/CS-690-Project/issues/11)
   - NFR2: [feature should be simple and intuitive](https://github.com/naftoli/CS-690-Project/issues/12)
 
-- UC5: Store List
-  - FR1: [Find Recipe to use]
-  - FR2: [Generate list of missing ingredients / items if needed]
-  - FR3: [Print list]
-  - NRF1: [simple and intuitive menu]
+- UC5: Missing list of Ingredients for Recipe
+  - FR1: [Choose Recipe](https://github.com/naftoli/CS-690-Project/issues/23)
+  - FR2: [Generate list of missing ingredients / items if any](https://github.com/naftoli/CS-690-Project/issues/24)
+  - FR3: [Print list](https://github.com/naftoli/CS-690-Project/issues/25)
+  - NRF1: [simple and intuitive menu](https://github.com/naftoli/CS-690-Project/issues/26)
+
+## Prioritization Explanation
+First a user needs to be able to login in order to use the application. Then we need to be able to have an proper Inventory of the Ingredients/Items the user has in stock in order to be able to know what the user needs in order to use a given recipe. Then we need to be able to get into the system and manage the Recipes. Once everything is in the system, the user can look for a recipe. Once the user decides on a recipe, the system can let the user know which Ingredients he/she is missing so that they can use the Recipe properly. The FR and NFR within each use case are pretty self explanatory.
 
 ## Constraints
 - The UI will be console-based.
