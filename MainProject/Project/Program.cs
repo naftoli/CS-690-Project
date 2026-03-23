@@ -9,6 +9,8 @@ class Program
     {
         while (true)
         {
+            Console.WriteLine();
+            // Console.WriteLine("Welcome to the Recipe Manager!");
             Console.WriteLine("1. Login");
             Console.WriteLine("2. Register");
             Console.WriteLine("3. Exit");
@@ -18,9 +20,11 @@ class Program
             switch (choice)
             {
                 case "1":
+                    Console.WriteLine();
                     Login();
                     break;
                 case "2":
+                    Console.WriteLine();
                     Register();
                     break;
                 case "3":
@@ -51,6 +55,7 @@ class Program
                     if (credentials[0] == username && credentials[1] == password)
                     {
                         Console.WriteLine("Login successful!");
+                        Console.WriteLine();
                         MainMenu();
 
                         return;
@@ -77,6 +82,7 @@ class Program
 
             File.AppendAllText("users.txt", $"{username},{password}" + Environment.NewLine);
             Console.WriteLine("Registration successful!");
+            Console.WriteLine();
         }
         catch (Exception ex)
         {
@@ -101,23 +107,29 @@ class Program
             Console.WriteLine("4. Logout");
             Console.Write("Choose an option: ");
             string choice = Console.ReadLine();
+            
             switch (choice)
             {
                 case "1":
+                    Console.WriteLine();
                     ManageIngredients();
                     break;
                 case "2":
+                    Console.WriteLine();
                     Console.WriteLine("Manage Recipes coming soon..." + Environment.NewLine);
                     // Implement recipe management functionality here
                     break;
                 case "3":
+                    Console.WriteLine();
                     Console.WriteLine("Find Recipe coming soon..." + Environment.NewLine);
                     // Implement recipe finding functionality here
                     break;
                 case "4":
+                    Console.WriteLine();
                     Console.WriteLine("Logging out...");
                     return;
                 default:
+                    Console.WriteLine();
                     Console.WriteLine("Invalid option. Please try again." + Environment.NewLine);
                     break;
             }
@@ -137,10 +149,12 @@ class Program
             Console.WriteLine("5. Back to Main Menu");
             Console.Write("Choose an option: ");
             string choice = Console.ReadLine();
+            
             switch (choice)            
             {
                 case "1":
                     // add ingredient and qty
+                    Console.WriteLine();
                     Console.WriteLine("Ingredient Name: ");
                     string ingredientName = Console.ReadLine();
                     Console.WriteLine("Ingredient Quantity: ");
@@ -150,6 +164,7 @@ class Program
                     Console.WriteLine("Ingredient added successfully!" + Environment.NewLine);
                     break;
                 case "2":
+                    Console.WriteLine();
                     Console.WriteLine("Choose from the list of ingredients to edit:");
                     if (File.Exists("ingredients.txt"))                    
                     {
@@ -183,6 +198,7 @@ class Program
                     }
                     break;
                 case "3":
+                    Console.WriteLine();
                     Console.WriteLine("Choose from the list of ingredients to delete:");
                     if (File.Exists("ingredients.txt"))                    {
                         string[] ingredients = File.ReadAllLines("ingredients.txt");
@@ -211,6 +227,7 @@ class Program
                     }
                     break;
                 case "4":
+                    Console.WriteLine();
                     Console.WriteLine("List of Ingredients:");
                     if (File.Exists("ingredients.txt"))                    
                     {
@@ -232,6 +249,7 @@ class Program
                 case "5":
                     return;
                 default:
+                    Console.WriteLine();
                     Console.WriteLine("Invalid option. Please try again." + Environment.NewLine);
                     break;
             }
