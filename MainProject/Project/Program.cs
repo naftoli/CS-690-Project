@@ -28,6 +28,8 @@ class Program
                     Register();
                     break;
                 case "3":
+                    Console.WriteLine("Bye!");
+                    Console.WriteLine();
                     return;
                 default:
                     Console.WriteLine("Invalid option. Please try again.");
