@@ -35,7 +35,14 @@ public class Recipes
                     string[] details = line.Split(',');
                     if (details.Length >= 2)
                     {
-                        Recipe r = new Recipe(details[0], new List<Ingredient>(), details[1]);
+                        string name = details[0];
+                        string instructions = details[details.Length - 1];
+                        List<Ingredient> ingredients = new List<Ingredient>();
+                        for (int i = 1; i < details.Length - 1; i += 2)
+                        {
+                            ingredients.Add(new Ingredient(details[i], details[i + 1]));
+                        }
+                        Recipe r = new Recipe(name, ingredients, instructions);
                         RecipeList.Add(r);
                     }
                 }
@@ -102,12 +109,12 @@ public class Recipes
 
             var ingredientName = AnsiConsole.Ask<string>("Enter the ingredient name:");
             var ingredientQuantity = AnsiConsole.Ask<string>("Enter the ingredient quantity:");
-            Ingredient i = new Ingredient(ingredientName, ingredientQuantity);
+            Ingredient i = new Ingredient(ingredientName.Trim(), ingredientQuantity.Trim());
             ingredients.Add(i);
         }
         var instructions = AnsiConsole.Ask<string>("Enter the recipe instructions:");
         
-        bool result = AddRecipe(name, ingredients, instructions);
+        bool result = AddRecipe(name.Trim(), ingredients, instructions.Trim());
         if (result)
         {
             AnsiConsole.MarkupLine("[green]Recipe added successfully![/]");
@@ -178,15 +185,20 @@ public class Recipes
 
         var choice = AnsiConsole.Ask<int>("Enter the number of the recipe to edit:");
         var newName = AnsiConsole.Ask<string>("Enter new name:");
-        var newIngredientsInput = AnsiConsole.Ask<string>("Enter new ingredients (comma separated):");
         List<Ingredient> newIngredients = new List<Ingredient>();
-        foreach (var ingredient in newIngredientsInput.Split(','))
-        {            
-            newIngredients.Add(new Ingredient(ingredient.Trim(), ""));
+        while (true)
+        {
+            var addIngredient = AnsiConsole.Confirm("Do you want to add an ingredient?");
+            if (!addIngredient) break;
+
+            var ingredientName = AnsiConsole.Ask<string>("Enter the ingredient name:");
+            var ingredientQuantity = AnsiConsole.Ask<string>("Enter the ingredient quantity:");
+            Ingredient i = new Ingredient(ingredientName.Trim(), ingredientQuantity.Trim());
+            newIngredients.Add(i);
         }
         var newInstructions = AnsiConsole.Ask<string>("Enter new instructions:");
         
-        bool result = EditRecipe(choice, newName, newIngredients, newInstructions);
+        bool result = EditRecipe(choice, newName.Trim(), newIngredients, newInstructions.Trim());
         if (result)
         {
             AnsiConsole.MarkupLine("[green]Recipe updated successfully![/]");
@@ -264,6 +276,6 @@ public class Recipes
     // Helper method to save recipes to file
     private void SaveRecipesToFile()
     {
-        File.WriteAllLines(filePath, RecipeList.Select(x => $"{x.Name},{x.Instructions}"));
+        File.WriteAllLines(filePath, RecipeList.Select(x => $"{x.Name},{string.Join(",", x.Ingredients.SelectMany(i => new[] { i.name, i.quantity }))},{x.Instructions}"));
     }
 }

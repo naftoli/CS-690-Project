@@ -19,6 +19,6 @@ public class Recipe
     public override string ToString()
     {
         string ingredientList = string.Join(", ", Ingredients.Select(i => i.ToString()));
-        return $"[yellow]Name:[/] {Name},\n [yellow]Ingredients:[/] {ingredientList},\n [yellow]Instructions:[/] {Instructions}";
+        return $"[yellow]Name:[/] {Name},\n[yellow]Ingredients:[/] {ingredientList},\n[yellow]Instructions:[/] {Instructions}";
     }
 }

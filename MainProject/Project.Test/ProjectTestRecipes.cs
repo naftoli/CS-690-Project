@@ -355,6 +355,32 @@ public class ProjectTestRecipes : IDisposable
     }
 
         [Fact]
+    void TestRecipePersistenceWithIngredients()
+    {
+        // Add recipes with ingredients
+        var recipes1 = new Recipes(testFilePath);
+        var ingredients = new List<Ingredient>
+        {
+            new Ingredient("Noodles", "400g"),
+            new Ingredient("Sauce", "2 cups")
+        };
+        recipes1.AddRecipe("Pasta", ingredients, "Boil and mix");
+        
+        // Load with new instance
+        var recipes2 = new Recipes(testFilePath);
+        var loadedList = recipes2.GetRecipeList();
+        
+        Assert.Single(loadedList);
+        Assert.Equal("Pasta", loadedList[0].Name);
+        Assert.Equal("Boil and mix", loadedList[0].Instructions);
+        Assert.Equal(2, loadedList[0].Ingredients.Count);
+        Assert.Equal("Noodles", loadedList[0].Ingredients[0].name);
+        Assert.Equal("400g", loadedList[0].Ingredients[0].quantity);
+        Assert.Equal("Sauce", loadedList[0].Ingredients[1].name);
+        Assert.Equal("2 cups", loadedList[0].Ingredients[1].quantity);
+    }
+
+        [Fact]
     void TestEditAndDelete()
     {
         Recipes recipes = new Recipes(testFilePath);
