@@ -481,6 +481,5 @@ $RECYCLE.BIN/
 # Vim temporary swap files
 *.swp
 
-users.txt
-ingredients.txt
-recipes.txt
+*.txt
+*.svg
