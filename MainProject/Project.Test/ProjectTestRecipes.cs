@@ -24,7 +24,7 @@ public class ProjectTestRecipes : IDisposable
         }
     }
 
-        [Fact]
+    [Fact]
     void TestAddRecipe()
     {
         Recipes recipes = new Recipes(testFilePath);
@@ -294,7 +294,7 @@ public class ProjectTestRecipes : IDisposable
         Assert.Equal("Stew", list[1].Name);
     }
 
-        [Fact]
+    [Fact]
     void TestRecipeWithMultipleIngredients()
     {
         Recipes recipes = new Recipes(testFilePath);
@@ -313,7 +313,7 @@ public class ProjectTestRecipes : IDisposable
         Assert.Equal(5, recipes.GetRecipeList()[0].Ingredients.Count);
     }
 
-        [Fact]
+    [Fact]
     void TestListRecipes()
     {
         Recipes recipes = new Recipes(testFilePath);
@@ -326,7 +326,7 @@ public class ProjectTestRecipes : IDisposable
         Assert.Equal(2, list.Count);
     }
 
-        [Fact]
+    [Fact]
     void TestListRecipesEmpty()
     {
         Recipes recipes = new Recipes(testFilePath);
@@ -337,7 +337,7 @@ public class ProjectTestRecipes : IDisposable
         Assert.Empty(list);
     }
 
-        [Fact]
+    [Fact]
     void TestRecipePersistence()
     {
         // Add recipes with first instance
@@ -354,7 +354,7 @@ public class ProjectTestRecipes : IDisposable
         Assert.Equal("Pizza", loadedList[1].Name);
     }
 
-        [Fact]
+    [Fact]
     void TestRecipePersistenceWithIngredients()
     {
         // Add recipes with ingredients
@@ -380,7 +380,7 @@ public class ProjectTestRecipes : IDisposable
         Assert.Equal("2 cups", loadedList[0].Ingredients[1].quantity);
     }
 
-        [Fact]
+    [Fact]
     void TestEditAndDelete()
     {
         Recipes recipes = new Recipes(testFilePath);
@@ -399,7 +399,7 @@ public class ProjectTestRecipes : IDisposable
         Assert.Equal("Salad", recipes.GetRecipeList()[1].Name);
     }
 
-        [Fact]
+    [Fact]
     void TestRecipeNameCaseSensitivity()
     {
         Recipes recipes = new Recipes(testFilePath);
@@ -412,7 +412,7 @@ public class ProjectTestRecipes : IDisposable
         Assert.Equal("PASTA", recipes.GetRecipeList()[1].Name);
     }
 
-        [Fact]
+    [Fact]
     void TestRecipeToString()
     {
         var ingredients = new List<Ingredient>
@@ -432,7 +432,7 @@ public class ProjectTestRecipes : IDisposable
         Assert.Contains("[yellow]Instructions:[/]", result);
     }
 
-        [Fact]
+    [Fact]
     void TestRecipeToStringEmptyIngredients()
     {
         var recipe = new Recipe("Simple Recipe", new List<Ingredient>(), "Just instructions");
@@ -443,7 +443,7 @@ public class ProjectTestRecipes : IDisposable
         Assert.Contains("[yellow]Ingredients:[/]", result);
     }
 
-        [Fact]
+    [Fact]
     void TestRecipeProperties()
     {
         var ingredients = new List<Ingredient> { new Ingredient("Flour", "2 cups") };
@@ -455,7 +455,7 @@ public class ProjectTestRecipes : IDisposable
         Assert.Equal("Flour", recipe.Ingredients[0].name);
     }
 
-        [Fact]
+    [Fact]
     void TestRecipeConstructor()
     {
         var ingredients = new List<Ingredient>
@@ -471,7 +471,7 @@ public class ProjectTestRecipes : IDisposable
         Assert.Equal("Mix and cook", recipe.Instructions);
     }
 
-        [Fact]
+    [Fact]
     void TestRecipesConstructorWithCustomFile()
     {
         var recipes = new Recipes(testFilePath);
@@ -496,7 +496,7 @@ public class ProjectTestRecipes : IDisposable
         Assert.Equal("Test instructions", loadedList[0].Instructions);
     }
 
-        [Fact]
+    [Fact]
     void TestRecipesFileWithInvalidData()
     {
         // Create a file with invalid data (missing comma)
@@ -507,7 +507,7 @@ public class ProjectTestRecipes : IDisposable
         Assert.Empty(recipes.GetRecipeList());
     }
 
-        [Fact]
+    [Fact]
     void TestRecipesFileWithIncompleteData()
     {
         // Create a file with incomplete data (only one field)

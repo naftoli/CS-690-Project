@@ -31,7 +31,7 @@ public class ProjectTestIngredients : IDisposable
         Assert.Empty(ingredients.GetIngredientList());
     }
 
-        [Fact]
+    [Fact]
     void TestIngredientsFilePersistence()
     {
         // Test that ingredients are loaded from file correctly
@@ -47,7 +47,7 @@ public class ProjectTestIngredients : IDisposable
         Assert.Equal("1 cup", loadedList[0].quantity);
     }
 
-        [Fact]
+    [Fact]
     void TestIngredientsFileWithInvalidData()
     {
         // Create a file with invalid data (missing comma)
@@ -58,7 +58,7 @@ public class ProjectTestIngredients : IDisposable
         Assert.Empty(ingredients.GetIngredientList());
     }
 
-        [Fact]
+    [Fact]
     void TestIngredientsFileWithIncompleteData()
     {
         // Create a file with incomplete data (only one field)
@@ -82,7 +82,7 @@ public class ProjectTestIngredients : IDisposable
         Assert.Contains(ingredients.GetIngredientList(), i => i.name == name && i.quantity == quantity);
     }
 
-        [Fact]
+    [Fact]
     void TestAddMultipleIngredients()
     {
         Ingredients ingredients = new Ingredients(testFilePath);
@@ -97,7 +97,7 @@ public class ProjectTestIngredients : IDisposable
         Assert.Equal(3, ingredients.GetIngredientList().Count);
     }
 
-        [Fact]
+    [Fact]
     void TestAddIngredientValidation()
     {
         Ingredients ingredients = new Ingredients(testFilePath);
@@ -108,7 +108,7 @@ public class ProjectTestIngredients : IDisposable
         Assert.Single(ingredients.GetIngredientList());
     }
 
-        [Fact]
+    [Fact]
     void TestEditIngredient()
     {
         Ingredients ingredients = new Ingredients(testFilePath);
@@ -121,7 +121,7 @@ public class ProjectTestIngredients : IDisposable
         Assert.Equal("2 cups", ingredients.GetIngredientList()[0].quantity);
     }
 
-        [Fact]
+    [Fact]
     void TestEditIngredientMultiple()
     {
         Ingredients ingredients = new Ingredients(testFilePath);
@@ -138,7 +138,7 @@ public class ProjectTestIngredients : IDisposable
         Assert.Equal("Carrot", ingredients.GetIngredientList()[2].name);
     }
 
-        [Fact]
+    [Fact]
     void TestEditIngredientInvalidIndex()
     {
         Ingredients ingredients = new Ingredients(testFilePath);
@@ -151,7 +151,7 @@ public class ProjectTestIngredients : IDisposable
         Assert.Equal("Carrot", ingredients.GetIngredientList()[0].name);
     }
 
-        [Fact]
+    [Fact]
     void TestEditIngredientZeroIndex()
     {
         Ingredients ingredients = new Ingredients(testFilePath);
@@ -162,7 +162,7 @@ public class ProjectTestIngredients : IDisposable
         Assert.False(result);
     }
 
-        [Fact]
+    [Fact]
     void TestDeleteIngredient()
     {
         Ingredients ingredients = new Ingredients(testFilePath);
@@ -174,7 +174,7 @@ public class ProjectTestIngredients : IDisposable
         Assert.Empty(ingredients.GetIngredientList());
     }
 
-        [Fact]
+    [Fact]
     void TestDeleteIngredientMultiple()
     {
         Ingredients ingredients = new Ingredients(testFilePath);
@@ -189,7 +189,7 @@ public class ProjectTestIngredients : IDisposable
         Assert.Equal("Carrot", ingredients.GetIngredientList()[1].name);
     }
 
-        [Fact]
+    [Fact]
     void TestDeleteIngredientInvalidIndex()
     {
         Ingredients ingredients = new Ingredients(testFilePath);
@@ -201,7 +201,7 @@ public class ProjectTestIngredients : IDisposable
         Assert.Single(ingredients.GetIngredientList());
     }
 
-        [Fact]
+    [Fact]
     void TestDeleteIngredientZeroIndex()
     {
         Ingredients ingredients = new Ingredients(testFilePath);
@@ -213,7 +213,7 @@ public class ProjectTestIngredients : IDisposable
         Assert.Single(ingredients.GetIngredientList());
     }
 
-        [Fact]
+    [Fact]
     void TestGetIngredientList()
     {
         Ingredients ingredients = new Ingredients(testFilePath);
@@ -227,7 +227,7 @@ public class ProjectTestIngredients : IDisposable
         Assert.Equal("Lettuce", list[1].name);
     }
 
-        [Fact]
+    [Fact]
     void TestGetIngredientListEmpty()
     {
         Ingredients ingredients = new Ingredients(testFilePath);
@@ -237,7 +237,7 @@ public class ProjectTestIngredients : IDisposable
         Assert.Empty(list);
     }
 
-        [Fact]
+    [Fact]
     void TestIngredientToString()
     {
         var ingredient = new Ingredient("Tomato", "2 cups");
@@ -249,7 +249,7 @@ public class ProjectTestIngredients : IDisposable
         Assert.Contains("[yellow]Quantity:[/]", result);
     }
 
-        [Fact]
+    [Fact]
     void TestIngredientProperties()
     {
         var ingredient = new Ingredient("Salt", "1 tsp");
@@ -258,7 +258,7 @@ public class ProjectTestIngredients : IDisposable
         Assert.Equal("1 tsp", ingredient.quantity);
     }
 
-        [Fact]
+    [Fact]
     void TestIngredientConstructor()
     {
         var ingredient = new Ingredient("Pepper", "1/2 cup");
