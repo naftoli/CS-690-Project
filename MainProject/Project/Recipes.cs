@@ -278,4 +278,17 @@ public class Recipes
     {
         File.WriteAllLines(filePath, RecipeList.Select(x => $"{x.Name},{string.Join(",", x.Ingredients.SelectMany(i => new[] { i.name, i.quantity }))},{x.Instructions}"));
     }
+
+    // Helper method to find a recipe by name
+    public Recipe? FindRecipeByName(string name)
+    {
+        for (int i = 0; i < RecipeList.Count; i++)
+        {
+            if (RecipeList[i].Name.Equals(name, StringComparison.OrdinalIgnoreCase))
+            {
+                return RecipeList[i];
+            }
+        }
+        return null;
+    }
 }

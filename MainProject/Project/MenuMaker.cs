@@ -66,8 +66,8 @@ public class MenuMaker
                     break;
                 case "Find Recipe":
                     Console.WriteLine();
-                    Console.WriteLine("Find Recipe coming soon..." + Environment.NewLine);
-                    // Implement recipe finding functionality here
+                    RecipeFinder rf = new RecipeFinder();
+                    rf.Find();
                     break;
                 case "Logout":
                     Console.WriteLine();
