@@ -24,22 +24,73 @@ public class ProjectTestRecipeFinder : IDisposable
     }
 
     [Fact]
-    void TestFindRecipeByName()
+    public void FindRecipeByName_ExistingRecipe_ReturnsRecipe()
     {
         // Arrange
+        string recipeName = "Test Pancakes";
+        string recipeInstructions = "Mix ingredients and cook on griddle.";
+        string recipeLine = $"{recipeName},Flour,2 cups,Eggs,2,Milk,1 cup,{recipeInstructions}";
+        File.WriteAllText(testFilePath, recipeLine);
         Recipes recipes = new Recipes(testFilePath);
-        string recipeName = "Test Recipe";
-        string instructions = "Test instructions";
-        recipes.AddRecipe(recipeName, new List<Ingredient>(), instructions);
-
         RecipeFinder finder = new RecipeFinder(recipes);
 
         // Act
-        var foundRecipe = finder.Find(recipeName);
+        var r = new Recipes(testFilePath);
+        var result = r.FindByName(recipeName);
 
         // Assert
-        Assert.NotNull(foundRecipe);
-        Assert.Equal(recipeName, foundRecipe.Name);
-        Assert.Equal(instructions, foundRecipe.Instructions);
+        Assert.NotNull(result);
+        Assert.Equal(recipeName, result.Name);
+        Assert.Equal(recipeInstructions, result.Instructions);
+    }
+
+    [Fact]
+    public void FindRecipeByName_NonExistingRecipe_ReturnsNull()
+    {
+        // Arrange
+        string recipeName = "Non-Existent Recipe";
+        File.WriteAllText(testFilePath, "Some Other Recipe,Ingredient,1,Instructions");
+        Recipes recipes = new Recipes(testFilePath);
+        RecipeFinder finder = new RecipeFinder(recipes);
+        // Act
+        var r = new Recipes(testFilePath);
+        var result = r.FindByName(recipeName);
+        // Assert
+        Assert.Null(result);
+    }
+
+    [Fact]
+    public void FindRecipeByTerm_ExistingTerm_ReturnsRecipe()
+    {
+        // Arrange
+        string recipeName = "Test Pancakes";
+        string recipeInstructions = "Mix ingredients and cook on griddle.";
+        string recipeLine = $"{recipeName},Flour,2 cups,Eggs,2,Milk,1 cup,{recipeInstructions}";
+        File.WriteAllText(testFilePath, recipeLine);
+        Recipes recipes = new Recipes(testFilePath);
+        RecipeFinder finder = new RecipeFinder(recipes);
+        // Act
+        var r = new Recipes(testFilePath);
+        var result = r.FindByTerm("Pancakes");
+        // Assert
+        Assert.NotNull(result);
+        Assert.Equal(recipeName, result.Name);
+    }
+
+    [Fact]
+    public void FindRecipeByTerm_NonExistingTerm_ReturnsNull()
+    {
+        // Arrange
+        string recipeName = "Test Pancakes";
+        string recipeInstructions = "Mix ingredients and cook on griddle.";
+        string recipeLine = $"{recipeName},Flour,2 cups,Eggs,2,Milk,1 cup,{recipeInstructions}";
+        File.WriteAllText(testFilePath, recipeLine);
+        Recipes recipes = new Recipes(testFilePath);
+        RecipeFinder finder = new RecipeFinder(recipes);
+        // Act
+        var r = new Recipes(testFilePath);
+        var result = r.FindByTerm("Waffles");
+        // Assert
+        Assert.Null(result);
     }
 }

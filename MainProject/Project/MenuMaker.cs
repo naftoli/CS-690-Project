@@ -40,7 +40,7 @@ public class MenuMaker
         while (true)
         {
             AnsiConsole.MarkupLine("[bold cyan]Welcome to the Main Menu![/]");
-            var options = new string[] { "Manage Ingredients", "Manage Recipes", "Find Recipe", "Logout" };
+            var options = new string[] { "Manage Ingredients", "Manage Recipes", "Find Recipe", "Find Missing Ingredients for Recipe", "Logout" };
 
             string choice;
             if (choiceSelector != null)
@@ -68,6 +68,11 @@ public class MenuMaker
                     Console.WriteLine();
                     RecipeFinder rf = new RecipeFinder();
                     rf.Find();
+                    break;
+                case "Find Missing Ingredients for Recipe":
+                    Console.WriteLine();
+                    MissingIngredientsFinder finder = new MissingIngredientsFinder();
+                    finder.Find();
                     break;
                 case "Logout":
                     Console.WriteLine();

@@ -20,13 +20,12 @@ public class RecipeFinder
     
     public Recipe? Find()
     {
-        var name = AnsiConsole.Ask<string>("Enter the name of the recipe:");
-        return Find(name);
-    }
-
-    public Recipe? Find(string name)
-    {
-        var recipe = r.FindRecipeByName(name);
+        var name = AnsiConsole.Ask<string>("Enter the name of recipe or term to search for:");
+        var recipe = r.FindByName(name);
+        if (recipe == null)
+        {
+            recipe = r.FindByTerm(name);
+        }
         if (recipe != null)
         {
             AnsiConsole.MarkupLine($"[bold cyan]Recipe Found![/]\n");

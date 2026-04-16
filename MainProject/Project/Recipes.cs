@@ -280,13 +280,27 @@ public class Recipes
     }
 
     // Helper method to find a recipe by name
-    public Recipe? FindRecipeByName(string name)
+    public Recipe? FindByName(string name)
     {
         for (int i = 0; i < RecipeList.Count; i++)
         {
             if (RecipeList[i].Name.Equals(name, StringComparison.OrdinalIgnoreCase))
             {
                 return RecipeList[i];
+            }
+        }
+        return null;
+    }
+
+    public Recipe? FindByTerm(string term)
+    {
+        foreach (var recipe in RecipeList)
+        {
+            if (recipe.Name.Contains(term, StringComparison.OrdinalIgnoreCase) || 
+                recipe.Instructions.Contains(term, StringComparison.OrdinalIgnoreCase) ||
+                recipe.Ingredients.Any(i => i.name.Contains(term, StringComparison.OrdinalIgnoreCase)))
+            {
+                return recipe;
             }
         }
         return null;
