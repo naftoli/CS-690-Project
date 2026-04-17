@@ -27,7 +27,6 @@ public class Program
             {
                 selection = MenuMaker.MenuHelper(options);
             }
-            Console.WriteLine();
 
             switch (selection)
             {

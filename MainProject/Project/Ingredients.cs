@@ -152,7 +152,7 @@ public class Ingredients
         AnsiConsole.MarkupLine("[bold cyan]Choose an ingredient to edit:[/]");
         for (int i = 0; i < IngredientList.Count; i++)
         {
-            AnsiConsole.MarkupLine(IngredientList[i].ToString());
+            AnsiConsole.MarkupLine($"[yellow]{i + 1}.[/] {IngredientList[i].ToString()}");
         }
 
         int choice = AnsiConsole.Ask<int>("Enter the number of the ingredient to edit:");
